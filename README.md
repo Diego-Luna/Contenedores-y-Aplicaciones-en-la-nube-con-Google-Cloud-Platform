@@ -86,3 +86,10 @@ Creando imágenes inmutables durante el proceso de construcción, en lugar de du
 * Imagen de contenedor Docker: binario empaquetado con un SO, sin kernel
 * Docker conteiner: proceso aislado
 * Conteiner registry: repositorio central de imágenes. Descarga
+
+## Docker != Contenedores
+
+* Es un formato para construir aplicaciones.
+* Son imagenes que reciben cierto formato.
+* Son contenedores que podemos instanciar usando alguna solución de orquestación (ejem. Swarm, Kubernetes).
+* Existen Registros de contenedores para imagenes Google.
