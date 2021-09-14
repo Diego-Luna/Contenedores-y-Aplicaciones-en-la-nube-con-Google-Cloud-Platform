@@ -79,3 +79,10 @@ Siempre y cuando el kernel objetivo fuera el mismo que el de la máquina huéspe
 Ambientes consistentes entre desarrollo y producción
 
 Creando imágenes inmutables durante el proceso de construcción, en lugar de durante el proceso de despliegue
+
+## Introducción a Docker
+
+* Es un formato para construir aplicaciones.
+* Son imagenes que reciben cierto formato.
+* Son contenedores que podemos instanciar usando alguna solución de orquestación (ejem. Swarm, Kubernetes).
+* Existen Registros de contenedores para imagenes Google.
