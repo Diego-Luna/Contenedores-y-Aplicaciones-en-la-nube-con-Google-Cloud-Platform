@@ -151,8 +151,8 @@ docker stop <container-name>
 ```
 
 Para construir una imagen.
-La flag ```-t``` es para ponerle un tag/nombre a nuestra imagen.
-El punto ```.``` es para indicar donde está el Dockerfile (en este caso significa que es en el directorio en el que estamos)
+La flag `-t` es para ponerle un tag/nombre a nuestra imagen.
+El punto `.` es para indicar donde está el Dockerfile (en este caso significa que es en el directorio en el que estamos)
 
 ```
 docker build -t user/nombre-de-mi-imagen .
@@ -168,5 +168,27 @@ docker exec -i -t <id-container> /bin/bash
 
 Una abstracción sobre la intraestructura. Ahora interactuamos con un plano de control para que ejecute las instrucciones que le damos de forma declarativa (es decir que busque el estado ideal).
 
-* Escalamiento Vertical: Mas recursos a una carga de trabajo.
-* Escalamiento Horizontal: Múltiples copias de la misma carga de trabajo.
+- Escalamiento Vertical: Mas recursos a una carga de trabajo.
+- Escalamiento Horizontal: Múltiples copias de la misma carga de trabajo.
+
+## Componentes de los nodos
+
+- kubelet
+
+Un agente que se ejecuta en cada nodo del clúster. Se asegura de que los contenedores se ejecuten en un Pod.
+
+kubelet toma un conjunto de PodSpecs que se proporcionan a través de varios mecanismos y asegura que los contenedores descritos en esas PodSpecs estén funcionando y en buen estado. El kubelet no administra contenedores que no fueron creados por Kubernetes.
+
+- kube-proxy
+
+kube-proxy es un proxy de red que se ejecuta en cada nodo de su clúster, implementando parte del concepto de servicio de Kubernetes.
+
+kube-proxy mantiene las reglas de red en los nodos. Estas reglas de red permiten la comunicación de red con sus pods desde sesiones de red dentro o fuera de su clúster.
+
+kube-proxy usa la capa de filtrado de paquetes del sistema operativo si hay una y está disponible. De lo contrario, kube-proxy reenvía el tráfico en sí.
+
+- Container runtime
+
+El tiempo de ejecución del contenedor es el software responsable de ejecutar los contenedores.
+
+Kubernetes admite varios tiempos de ejecución de contenedores: Docker, containerd, CRI-O y cualquier implementación de Kubernetes CRI (Container Runtime Interface).
