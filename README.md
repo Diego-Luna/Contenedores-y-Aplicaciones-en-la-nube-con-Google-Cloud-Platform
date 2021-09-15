@@ -163,3 +163,10 @@ Para ejecutar bash dentro de un contenedor que se está ejecutando.
 ```
 docker exec -i -t <id-container> /bin/bash
 ```
+
+## Piensa en Kubernetes como:
+
+Una abstracción sobre la intraestructura. Ahora interactuamos con un plano de control para que ejecute las instrucciones que le damos de forma declarativa (es decir que busque el estado ideal).
+
+* Escalamiento Vertical: Mas recursos a una carga de trabajo.
+* Escalamiento Horizontal: Múltiples copias de la misma carga de trabajo.
