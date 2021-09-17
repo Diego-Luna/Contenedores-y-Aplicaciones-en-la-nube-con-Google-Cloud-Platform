@@ -192,3 +192,44 @@ kube-proxy usa la capa de filtrado de paquetes del sistema operativo si hay una 
 El tiempo de ejecución del contenedor es el software responsable de ejecutar los contenedores.
 
 Kubernetes admite varios tiempos de ejecución de contenedores: Docker, containerd, CRI-O y cualquier implementación de Kubernetes CRI (Container Runtime Interface).
+
+## Introducción a la malla de servicios (Service Mesh)
+
+**¿Qué es una malla de servicio?**
+Una malla de servicio provee una manera transparente e independiente al lenguaje para automatizar funciones de red de forma fácil y flexible
+
+- Separa las aplicaciones del networking de las aplicaciones
+- Desacopla la operación del desarrollo
+- Provee un framework consistente para administrar la multi-nube
+
+**¿Qué es Istio?**
+Una malla de servicio. Pero aún más: es una plataforma de servicios abiertos para manejar las interacciones entre servicios entre contenedores y VMs
+
+**Beneficios**
+
+- Administra el flujo de tráfico de entrada, salida y dentro de tus servicios [Traffic splitting, canary, blue-green, mirroring…]
+
+- Acceso y comunicación segura entre tus servicios usando políticas [mTLS,…]
+
+- Visibilidad completa de todo lo que está pasando con tus servicios con instrumentación mínima
+
+**¿Por qué habilitar una malla de servicio?**
+
+1. Manera consistente de monitorear rendimiento, tasas de error y la postura de seguridad.
+2. Te ayuda a construir servicios resilientes con despliegues seguros y failover zonal o regional.
+3. Puedes tener seguridad consistente en tus servicios, incluyendo encriptación en tránsito, redes de cero confianza y protección de PII.
+
+**Componentes funcionales de Istio**
+
+- **Pilot**: Plano de control para configurar y mandar políticas de comunicación
+
+- **Citadel**: Servicio-a-servicio auth[n,z] usando TLS mutuo, con manejo de identidades y credenciales incorporado
+
+**La magia del sidecar**
+
+- Desplegado con cada carga de trabajo
+- Proxy de todo el tráfico de entrada y salida del servicio
+- Direcciona tráfico (incluyendo reglas de enrutamiento
+- Hace cumplir las políticas
+- Reporta la telemetría
+- Todo sin tener que embeber librerías de cliente
